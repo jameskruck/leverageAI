@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Workshop - Student Perspective</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+<!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+   <!-- Navigation -->
+<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li>Workshop Home</li>
+                 </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                     <span>AI as a Learning Companion</span>
+                </li>
+
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                     <span class="text-blue-600 font-medium">Supporting Student Learning</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-5xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h1 class="text-2xl font-bold mb-4">Supporting Student Learning with AI</h1>
+            
+            <div class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Research-Based Framework</h2>
+                <p class="mb-4">Current research identifies five key strategies for effectively integrating AI in teaching:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-blue-600">1. Multiple Examples</h3>
+                        <p class="text-sm">Help students understand complex concepts through varied examples and contexts</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-blue-600">2. Varied Explanations</h3>
+                        <p class="text-sm">Address different learning styles and levels of understanding</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-blue-600">3. Misconception Addressing</h3>
+                        <p class="text-sm">Identify and correct common misunderstandings early</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-blue-600">4. Low-Stakes Testing</h3>
+                        <p class="text-sm">Frequent opportunities for self-assessment and feedback</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm md:col-span-2">
+                        <h3 class="font-medium text-blue-600">5. Distributed Practice</h3>
+                        <p class="text-sm">Spread learning and reinforcement across time for better retention</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 1: Choose a Course Concept</h2>
+                <p class="mb-3">Think of a concept from your course that students often find challenging. Consider:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    <li>Topics where students frequently ask for additional explanations</li>
+                    <li>Concepts that benefit from multiple examples</li>
+                    <li>Ideas that build on previous knowledge</li>
+                </ul>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block font-medium mb-2">Describe the Challenging Concept</label>
+                        <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
+                            placeholder="What concept do students often struggle with? Why is it challenging for them?" 
+                            oninput="saveInput('concept')"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border rounded-lg p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 2: Explore Student AI Usage</h2>
+                <p class="mb-4">Current research shows how students use AI for learning:</p>
+                
+                <div class="grid grid-cols-2 gap-6 mb-4">
+                    <div class="bg-green-50 p-4 rounded">
+                        <h3 class="font-medium mb-2">Common Student Uses</h3>
+                        <ul class="list-disc pl-4 space-y-1 text-sm">
+                            <li>Writing support (36%)</li>
+                            <li>Brainstorming (29%)</li>
+                            <li>Understanding concepts (20%)</li>
+                            <li>Research assistance (14%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded">
+                        <h3 class="font-medium mb-2">Faculty Concerns</h3>
+                        <ul class="list-disc pl-4 space-y-1 text-sm">
+                            <li>Critical thinking impact</li>
+                            <li>Information accuracy</li>
+                            <li>Skill development</li>
+                            <li>Academic integrity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded mb-4">
+                    <h3 class="font-medium mb-2">Explore Integration Strategies</h3>
+                    <p class="mb-3">Use the AI chat to explore how students might use AI to understand your chosen concept. Consider both:</p>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h4 class="text-sm font-medium mb-2">Productive Uses</h4>
+                            <ul class="list-disc pl-4 text-sm space-y-1">
+                                <li>Getting varied explanations</li>
+                                <li>Finding relevant examples</li>
+                                <li>Practice problem-solving</li>
+                                <li>Self-assessment</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium mb-2">Potential Pitfalls</h4>
+                            <ul class="list-disc pl-4 text-sm space-y-1">
+                                <li>Bypassing understanding</li>
+                                <li>Over-reliance</li>
+                                <li>Missing key context</li>
+                                <li>Accepting errors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border rounded-lg mb-4">
+                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
+                    <div class="border-t p-4 bg-white">
+                        <div class="flex space-x-2">
+                            <input type="text" id="chat-input" 
+                                class="flex-1 p-2 border rounded-lg"
+                                placeholder="Try asking AI how students might approach this concept...">
+                            <button onclick="sendMessage()" 
+                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 3: Document Insights</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-medium mb-2">How AI Can Help Learning</label>
+                        <textarea id="benefits" class="w-full border rounded p-2 min-h-[100px]" 
+                            placeholder="What are the most valuable ways AI could support student understanding of this concept?"
+                            oninput="saveInput('benefits')"></textarea>
+                    </div>
+                    <div>
+                        <label class="block font-medium mb-2">Ensuring Real Learning</label>
+                        <textarea id="guidance" class="w-full border rounded p-2 min-h-[100px]" 
+                            placeholder="How can you guide students to use AI effectively while ensuring they develop necessary skills?"
+                            oninput="saveInput('guidance')"></textarea>
+                    </div>
+                </div>
+            </div>
+                   <!-- Navigation -->
+        <div class="flex justify-between mt-6">
+            <a href="#" onclick="history.back()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
+                <a href="activity3.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                    Next: Designing for AI-Enhanced Learning
+                </a>
+            </div>
+        </div>
+    </main>
+     <!-- ChatGPT Integration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        // Store conversation history
+        let conversationHistory = [];
+
+        // ChatGPT API configuration
+        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+        
+        async function callChatGPT(userMessage) {
+            try {
+                // Add user message to history
+                conversationHistory.push({
+                    role: "user",
+                    content: userMessage
+                });
+
+                const response = await axios.post(OPENAI_API_ENDPOINT, {
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "You are helping faculty explore how students might use AI to understand challenging course concepts. Consider both beneficial learning approaches and potential misuses."
+                        },
+                        ...conversationHistory
+                    ],
+                    temperature: 0.7
+                }, {
+                    headers: {
+                        'Authorization': `Bearer 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`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                // Add AI response to history
+                const aiResponse = response.data.choices[0].message.content;
+                conversationHistory.push({
+                    role: "assistant",
+                    content: aiResponse
+                });
+
+                return aiResponse;
+            } catch (error) {
+                console.error('Error calling ChatGPT:', error);
+                if (error.response) {
+                    throw new Error(error.response.data.error.message || 'Error connecting to ChatGPT');
+                } else if (error.request) {
+                    throw new Error('No response from ChatGPT. Please check your internet connection.');
+                } else {
+                    throw new Error('Error setting up the request to ChatGPT.');
+                }
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const messageText = input.value.trim();
+            
+            if (!messageText) return;
+
+            // Disable input while processing
+            input.disabled = true;
+            
+            try {
+                // Add user message to UI
+                const userDiv = document.createElement('div');
+                userDiv.className = 'flex justify-end mb-4';
+                userDiv.innerHTML = `
+                    <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                        ${messageText}
+                    </div>
+                `;
+                messages.appendChild(userDiv);
+
+                // Clear input
+                input.value = '';
+
+                // Show typing indicator
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'flex justify-start mb-4 typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="bg-gray-100 rounded-lg py-2 px-4">
+                        <span class="typing-dots">AI is thinking...</span>
+                    </div>
+                `;
+                messages.appendChild(typingDiv);
+                messages.scrollTop = messages.scrollHeight;
+
+                // Call ChatGPT API
+                const response = await callChatGPT(messageText);
+                
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Add AI response
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex justify-start mb-4';
+                aiDiv.innerHTML = `
+                    <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                        ${response}
+                    </div>
+                `;
+                messages.appendChild(aiDiv);
+
+            } catch (error) {
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Show error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'flex justify-center mb-4';
+                errorDiv.innerHTML = `
+                    <div class="bg-red-100 text-red-700 rounded-lg py-2 px-4">
+                        ${error.message}
+                    </div>
+                `;
+                messages.appendChild(errorDiv);
+            } finally {
+                // Re-enable input
+                input.disabled = false;
+                input.focus();
+                
+                // Scroll to bottom
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        // Save input to localStorage
+        function saveInput(id) {
+            const value = document.getElementById(id).value;
+            localStorage.setItem(id, value);
+        }
+        
+        // Load saved inputs
+        function loadInputs() {
+            const fields = ['concept', 'benefits', 'guidance'];
+            fields.forEach(id => {
+                const savedValue = localStorage.getItem(id);
+                if (savedValue) {
+                    document.getElementById(id).value = savedValue;
+                }
+            });
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize
+        window.onload = function() {
+            loadInputs();
+        };
+    </script>
+</body>
+</html>

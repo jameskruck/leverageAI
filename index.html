@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workshop - Fun with Creative AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li>
+                    <span class="text-blue-600 font-medium">Workshop Home</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-5xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">GenAI in Teaching and Learning</h2>
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <p>Are you curious about how your students might be using GenAI? Are you wondering how you might integrate GenAI into your classroom? Are you thinking about how you might assess your students knowing that they're using GenAI?</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p>This workshop will introduce you to how GenAI might be used in your classrooms. You'll get a chance to experiment with GenAI and explore its capabilities. At the end of the session, you will walk away with a plan to implement GenAI in your classroom.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p>Our first step is to see how we can use GenAI as a collaborator. In this activity, we're going to see if GenAI can come up with a creative introduction for ourselves.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-lg font-semibold mb-3">Example: The Iterative Process</h2>
+                <p class="mb-4">See how an introduction evolves through multiple interactions:</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="text-sm font-medium text-blue-600">Initial Prompt:</h3>
+                        <p class="text-sm mt-1">"Write a movie trailer intro about someone who loves gardening and just learned to make pottery."</p>
+                        
+                        <h3 class="text-sm font-medium text-blue-600 mt-3">First Response:</h3>
+                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
+                            🎬 In a world of concrete and glass, one person dared to get their hands dirty. From nurturing seeds to shaping clay, they're about to discover that growth takes many forms...
+                        </p>
+
+                        <h3 class="text-sm font-medium text-blue-600 mt-3">Refinement Prompt:</h3>
+                        <p class="text-sm mt-1">"That's good! Could you make it more specific about how gardening and pottery connect?"</p>
+
+                        <h3 class="text-sm font-medium text-blue-600 mt-3">Improved Response:</h3>
+                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
+                            🎬 In a world of concrete and glass, one person discovered the ancient magic of earth itself. By day, they coax life from soil in their flourishing garden. By night, they transform raw clay into vessels worthy of their homegrown harvests. Two crafts, one element, endless possibilities...
+                        </p>
+
+                        <h3 class="text-sm font-medium text-blue-600 mt-3">Final Refinement:</h3>
+                        <p class="text-sm mt-1">"Love it! Could you add something about sharing these creations with others?"</p>
+
+                        <h3 class="text-sm font-medium text-blue-600 mt-3">Final Version:</h3>
+                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
+                            🎬 In a world of concrete and glass, one person discovered the ancient magic of earth itself. By day, they coax life from soil in their flourishing garden. By night, they transform raw clay into vessels worthy of their homegrown harvests. Now, they're bringing people together, one handcrafted pot of homegrown herbs at a time. Two crafts, one element, and a community growing stronger through the power of creation...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-lg font-semibold mb-3">Helpful Refinement Prompts</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h3 class="font-medium mb-2">For Adding Detail</h3>
+                        <ul class="text-sm space-y-1">
+                            <li>• "Could you add more specific details about...?"</li>
+                            <li>• "How could we incorporate [specific element]?"</li>
+                            <li>• "Can you expand on the part about...?"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-medium mb-2">For Changing Style</h3>
+                        <ul class="text-sm space-y-1">
+                            <li>• "Could you make it more [dramatic/funny/serious]?"</li>
+                            <li>• "Try using the style of [genre/author/show]"</li>
+                            <li>• "Can we adjust the tone to be more...?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border rounded-lg p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-3">Your Turn!</h2>
+                <div class="border rounded-lg mb-4">
+                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                        <!-- Initial message -->
+                        <div class="flex justify-start mb-4">
+                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                                I'd love to help create an epic introduction about you! Tell me about your interests and achievements, and what style you'd like (movie trailer, nature documentary, superhero story, etc.). Let's have some fun with it! 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t p-4 bg-white">
+                        <div class="flex space-x-2">
+                            <input type="text" id="chat-input" 
+                                class="flex-1 p-2 border rounded-lg"
+                                placeholder="Share your interests and preferred style...">
+                            <button onclick="sendMessage()" 
+                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 p-4 rounded mb-6">
+                <h3 class="font-medium mb-2">What We're Learning</h3>
+                <ul class="list-disc pl-6 space-y-2 text-sm">
+                    <li>How to frame effective prompts for AI</li>
+                    <li>The importance of providing clear context</li>
+                    <li>How AI adapts tone and style</li>
+                    <li>The iterative nature of AI interaction - refining and building on responses</li>
+                    <li>The collaborative process between human and AI</li>
+                </ul>
+            </div>
+
+            <div class="flex justify-end">
+                <a href="activity1.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                    Next: AI as Learning Companion
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        // Store conversation history
+        let conversationHistory = [];
+
+        // ChatGPT API configuration
+        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+        
+        async function callChatGPT(userMessage) {
+            try {
+                conversationHistory.push({
+                    role: "user",
+                    content: userMessage
+                });
+
+                const response = await axios.post(OPENAI_API_ENDPOINT, {
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "You are a creative writing partner helping create fun, engaging introductions in various styles (movie trailer, nature documentary, superhero story, etc.). Keep the tone light and playful while incorporating the user's interests and achievements. After each response, encourage refinement by suggesting aspects that could be enhanced or asking what element they'd like to develop further. Make each response unique and entertaining."
+                        },
+                        ...conversationHistory
+                    ],
+                    temperature: 0.8
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${getApiKey()}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const aiResponse = response.data.choices[0].message.content;
+                conversationHistory.push({
+                    role: "assistant",
+                    content: aiResponse
+                });
+
+                return aiResponse;
+            } catch (error) {
+                console.error('Error calling ChatGPT:', error);
+                throw error;
+            }
+        }
+
+        // API Key Management
+        function getApiKey() {
+            return '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';
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const messageText = input.value.trim();
+            
+            if (!messageText) return;
+
+            // Disable input while processing
+            input.disabled = true;
+            
+            try {
+                // Add user message to UI
+                const userDiv = document.createElement('div');
+                userDiv.className = 'flex justify-end mb-4';
+                userDiv.innerHTML = `
+                    <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                        ${messageText}
+                    </div>
+                `;
+                messages.appendChild(userDiv);
+
+                // Clear input
+                input.value = '';
+
+                // Show typing indicator
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'flex justify-start mb-4 typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="bg-gray-100 rounded-lg py-2 px-4">
+                        <span class="typing-dots">AI is thinking...</span>
+                    </div>
+                `;
+                messages.appendChild(typingDiv);
+                messages.scrollTop = messages.scrollHeight;
+
+                // Call ChatGPT API
+                const response = await callChatGPT(messageText);
+                
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Add AI response
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex justify-start mb-4';
+                aiDiv.innerHTML = `
+                    <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                        ${response}
+                    </div>
+                `;
+                messages.appendChild(aiDiv);
+
+            } catch (error) {
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Show error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'flex justify-center mb-4';
+                errorDiv.innerHTML = `
+                    <div class="bg-red-100 text-red-700 rounded-lg py-2 px-4">
+                        ${error.message}
+                    </div>
+                `;
+                messages.appendChild(errorDiv);
+            } finally {
+                // Re-enable input
+                input.disabled = false;
+                input.focus();
+                
+                // Scroll to bottom
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize
+        window.onload = function() {
+            // Add any initialization if needed
+        };
+
+    </script>
+</body>
+</html>

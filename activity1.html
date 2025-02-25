@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Workshop - Learning Companion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   <!-- Navigation -->
+<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li>Workshop Home</li>
+                 </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                     <span class="text-blue-600 font-medium">AI as a Learning Companion</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-5xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h1 class="text-2xl font-bold mb-4">AI as a Learning Companion</h1>
+            
+            <div class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Why This Matters</h2>
+                <div class="space-y-3">
+                    <p>Recent research shows that while 45% of students are already using AI in their coursework, 85% of instructors have not yet incorporated it into their teaching. This gap presents both challenges and opportunities:</p>
+                    <ul class="list-disc pl-6">
+                        <li>Students primarily use AI for writing support (36%), brainstorming (29%), and understanding difficult concepts (20%)</li>
+                        <li>Many instructors express concerns about critical thinking and learning retention</li>
+                        <li>However, when thoughtfully implemented, AI can serve as a "force multiplier" for effective teaching practices</li>
+                    </ul>
+                    <p class="mt-4">Today, we'll start by experiencing AI as a learning tool ourselves, helping build firsthand understanding of its potential and limitations.</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 1: Choose Your Learning Challenge</h2>
+                <p class="mb-3">Think of a concept you'd like to understand better. This could be:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    <li>A teaching method or framework you've heard about but haven't fully explored</li>
+                    <li>A technical concept that would help you better support your students</li>
+                    <li>A topic where you'd benefit from additional examples or explanations</li>
+                </ul>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block font-medium mb-2">Describe Your Learning Challenge</label>
+                        <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
+                            placeholder="What would you like to understand better? What makes this challenging?" 
+                            oninput="saveInput('concept')"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border rounded-lg p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 2: Engage with AI</h2>
+                <p class="mb-4">Research shows effective AI interactions often involve:</p>
+                <div class="grid grid-cols-2 gap-6 mb-4">
+                    <div class="bg-green-50 p-4 rounded">
+                        <h3 class="font-medium mb-2">Proven Strategies</h3>
+                        <ul class="list-disc pl-4 space-y-1 text-sm">
+                            <li>Ask for multiple examples</li>
+                            <li>Request different explanations</li>
+                            <li>Connect to familiar concepts</li>
+                            <li>Break down complex ideas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded">
+                        <h3 class="font-medium mb-2">Common Pitfalls</h3>
+                        <ul class="list-disc pl-4 space-y-1 text-sm">
+                            <li>Accepting first answer only</li>
+                            <li>Not verifying information</li>
+                            <li>Missing key context</li>
+                            <li>Overlooking limitations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Example Learning Dialogue</h3>
+                    <p class="mb-3">Here's how you might work with AI to understand a challenging concept:</p>
+                    <div class="bg-white rounded-lg p-4 space-y-3">
+                        <div class="flex justify-end">
+                            <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                                I'm having trouble understanding Work Breakdown Structure (WBS) in project management. Can you explain it?
+                            </div>
+                        </div>
+                        <div class="flex justify-start">
+                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                                A Work Breakdown Structure (WBS) is like creating a detailed map of your project. Think of it as breaking down a big task into smaller, manageable pieces in a hierarchical way.
+
+                                For example, if you were planning a birthday party, your WBS might look like:
+                                1. Venue
+                                   - Research locations
+                                   - Book space
+                                   - Arrange setup
+                                2. Food
+                                   - Plan menu
+                                   - Order cake
+                                   - Arrange catering
+                                
+                                Would you like to try creating a simple WBS for a project you're familiar with?
+                            </div>
+                        </div>
+                        <div class="flex justify-end">
+                            <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                                That helps! But I'm still confused about the difference between a WBS and a regular to-do list.
+                            </div>
+                        </div>
+                        <div class="flex justify-start">
+                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                                That's a common misconception! The key difference is that a WBS is hierarchical and scope-focused, while a to-do list is typically sequential and task-focused.
+
+                                Let me show you with your birthday party example:
+
+                                To-Do List:
+                                1. Call venues
+                                2. Book venue
+                                3. Order cake
+                                4. Send invitations
+                                
+                                WBS:
+                                1. Event Planning
+                                   - Venue Management
+                                     * Location research
+                                     * Contract negotiation
+                                   - Guest Management
+                                     * Create guest list
+                                     * Design invitations
+                                     * Track RSVPs
+
+                                See how the WBS shows relationships and categories, while the to-do list just shows sequence?
+                            </div>
+                        </div>
+                        <div class="flex justify-end">
+                            <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                                Oh, I think I get it. So would milestones go in a WBS?
+                            </div>
+                        </div>
+                        <div class="flex justify-start">
+                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                                Another great question that touches on a common confusion! Actually, milestones don't belong in a WBS - they belong in your project schedule or timeline.
+
+                                A WBS focuses on deliverables (the what), not timing (the when). Think of it this way:
+                                - WBS: Shows what needs to be created/delivered
+                                - Timeline: Shows when things happen
+                                - To-do list: Shows individual actions to take
+
+                                Would you like to try identifying what elements from your project would go in each of these?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="bg-blue-50 p-4 rounded mb-4">
+                    <h3 class="font-medium mb-2">Your Turn</h3>
+                    <p>Now try exploring your own challenging concept below. Remember to:</p>
+                    <ul class="list-disc pl-6 mb-4 text-sm space-y-1">
+                        <li>Start with a clear description of what you're trying to understand</li>
+                        <li>Ask follow-up questions when something isn't clear</li>
+                        <li>Challenge your understanding by posing "what if" scenarios</li>
+                        <li>Request concrete examples that connect to your experience</li>
+                    </ul>
+                </div>
+                
+                <div class="border rounded-lg mb-4">
+                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
+                    <div class="border-t p-4 bg-white">
+                        <div class="flex space-x-2">
+                            <input type="text" id="chat-input" 
+                                class="flex-1 p-2 border rounded-lg"
+                                placeholder="Ask about your concept...">
+                            <button onclick="sendMessage()" 
+                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">Step 3: Reflect on the Experience</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block font-medium mb-2">Document Your Insights</label>
+                        <textarea id="insights" class="w-full border rounded p-2 min-h-[100px]" 
+                            placeholder="What worked well in your AI interaction? What was challenging? How might this inform your teaching?" 
+                            oninput="saveInput('insights')"></textarea>
+                    </div>
+                </div>
+            </div>
+    <!--Navigation-->
+             <div class="flex justify-between mt-6">
+            <a href="#" onclick="history.back()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
+    <div class="flex justify-end">
+                <a href="activity2.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                    Next: Supporting Student Learning
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    [Previous JavaScript code remains the same]
+</body>
+</html>
+
+    <!-- ChatGPT Integration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        // Store conversation history
+        let conversationHistory = [];
+
+        // ChatGPT API configuration
+        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+        
+        async function callChatGPT(userMessage) {
+            try {
+                // Add user message to history
+                conversationHistory.push({
+                    role: "user",
+                    content: userMessage
+                });
+
+                const response = await axios.post(OPENAI_API_ENDPOINT, {
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "You are a helpful learning companion, helping explain complex concepts through multiple approaches, examples, and analogies. Keep explanations clear and build understanding step by step."
+                        },
+                        ...conversationHistory
+                    ],
+                    temperature: 0.7
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${getApiKey()}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                // Add AI response to history
+                const aiResponse = response.data.choices[0].message.content;
+                conversationHistory.push({
+                    role: "assistant",
+                    content: aiResponse
+                });
+
+                return aiResponse;
+            } catch (error) {
+                console.error('Error calling ChatGPT:', error);
+                if (error.response) {
+                    throw new Error(error.response.data.error.message || 'Error connecting to ChatGPT');
+                } else if (error.request) {
+                    throw new Error('No response from ChatGPT. Please check your internet connection.');
+                } else {
+                    throw new Error('Error setting up the request to ChatGPT.');
+                }
+            }
+        }
+
+        // API Key Management
+        function getApiKey() {
+            return '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'; // Replace with your actual API key
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const messageText = input.value.trim();
+            
+            if (!messageText) return;
+
+            // Disable input while processing
+            input.disabled = true;
+            
+            try {
+                // Add user message to UI
+                const userDiv = document.createElement('div');
+                userDiv.className = 'flex justify-end mb-4';
+                userDiv.innerHTML = `
+                    <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                        ${messageText}
+                    </div>
+                `;
+                messages.appendChild(userDiv);
+
+                // Clear input
+                input.value = '';
+
+                // Show typing indicator
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'flex justify-start mb-4 typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="bg-gray-100 rounded-lg py-2 px-4">
+                        <span class="typing-dots">AI is thinking...</span>
+                    </div>
+                `;
+                messages.appendChild(typingDiv);
+                messages.scrollTop = messages.scrollHeight;
+
+                // Call ChatGPT API
+                const response = await callChatGPT(messageText);
+                
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Add AI response
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex justify-start mb-4';
+                aiDiv.innerHTML = `
+                    <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                        ${response}
+                    </div>
+                `;
+                messages.appendChild(aiDiv);
+
+            } catch (error) {
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Show error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'flex justify-center mb-4';
+                errorDiv.innerHTML = `
+                    <div class="bg-red-100 text-red-700 rounded-lg py-2 px-4">
+                        ${error.message}
+                    </div>
+                `;
+                messages.appendChild(errorDiv);
+            } finally {
+                // Re-enable input
+                input.disabled = false;
+                input.focus();
+                
+                // Scroll to bottom
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        // Save input to localStorage
+        function saveInput(id) {
+            const value = document.getElementById(id).value;
+            localStorage.setItem(id, value);
+        }
+        
+        // Load saved inputs
+        function loadInputs() {
+            const fields = ['concept', 'insights'];
+            fields.forEach(id => {
+                const savedValue = localStorage.getItem(id);
+                if (savedValue) {
+                    document.getElementById(id).value = savedValue;
+                }
+            });
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize
+        window.onload = function() {
+            loadInputs();
+        };
+    </script>
+</body>
+</html>
