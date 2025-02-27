@@ -152,49 +152,20 @@
         let conversationHistory = [];
 
         // ChatGPT API configuration
-        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
-        
-        async function callChatGPT(userMessage) {
-            try {
-                conversationHistory.push({
-                    role: "user",
-                    content: userMessage
-                });
+       const BACKEND_API = 'https://leverageai.onrender.com/chat'; // Your Render backend
 
-                const response = await axios.post(OPENAI_API_ENDPOINT, {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "You are a creative writing partner helping create fun, engaging introductions in various styles (movie trailer, nature documentary, superhero story, etc.). Keep the tone light and playful while incorporating the user's interests and achievements. After each response, encourage refinement by suggesting aspects that could be enhanced or asking what element they'd like to develop further. Make each response unique and entertaining."
-                        },
-                        ...conversationHistory
-                    ],
-                    temperature: 0.8
-                }, {
-                    headers: {
-                        'Authorization': `Bearer ${getApiKey()}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                const aiResponse = response.data.choices[0].message.content;
-                conversationHistory.push({
-                    role: "assistant",
-                    content: aiResponse
-                });
+async function callChatGPT(userMessage) {
+    try {
+        const response = await axios.post(BACKEND_API, {
+            message: userMessage
+        });
 
-                return aiResponse;
-            } catch (error) {
-                console.error('Error calling ChatGPT:', error);
-                throw error;
-            }
-        }
-
-        // API Key Management
-        function getApiKey() {
-            return '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';
-        }
+        return response.data.response; // AI's reply from your backend
+    } catch (error) {
+        console.error('Error calling AI:', error);
+        return "Error connecting to AI.";
+    }
+}
 
         async function sendMessage() {
             const input = document.getElementById('chat-input');
