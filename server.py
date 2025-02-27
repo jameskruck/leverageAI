@@ -5,6 +5,8 @@ import os
 
 app = Flask(__name__)
 CORS(app)  # Allows your website to connect to this server
+print("API Key:", openai.api_key)  # Debugging line
+
 
 # Get OpenAI API key from environment variables (safer than writing it in code)
 openai.api_key = os.getenv("OPENAI_API_KEY")
