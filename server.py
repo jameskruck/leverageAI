@@ -5,11 +5,15 @@ import os
 
 app = Flask(__name__)
 CORS(app)  # Allows your website to connect to this server
-print("API Key:", openai.api_key)  # Debugging line
-
 
 # Get OpenAI API key from environment variables (safer than writing it in code)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Debugging: Check if API Key is being loaded
+if openai.api_key:
+    print("✅ API Key Loaded Successfully!")
+else:
+    print("❌ API Key is MISSING! Check Render Environment Variables.")
 
 @app.route("/chat", methods=["POST"])
 def chat():
