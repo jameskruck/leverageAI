@@ -146,37 +146,38 @@
         </div>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
         // Store conversation history
         let conversationHistory = [];
 
-        // ChatGPT API configuration
-       const BACKEND_API = 'https://leverageai.onrender.com/chat'; // Your Render backend
+        // API endpoint (Backend on Render)
+        const BACKEND_API = 'https://leverageai.onrender.com/chat';
 
-async function callChatGPT(userMessage) {
-    try {
-        const response = await axios.post(BACKEND_API, {
-            message: userMessage
-        });
+        async function callChatGPT(userMessage) {
+            try {
+                const response = await axios.post(BACKEND_API, {
+                    message: userMessage
+                });
 
-        return response.data.response; // AI's reply from your backend
-    } catch (error) {
-        console.error('Error calling AI:', error);
-        return "Error connecting to AI.";
-    }
-}
+                console.log("✅ AI Response:", response.data); // Debugging log
+                return response.data.response;
+            } catch (error) {
+                console.error('❌ Error calling AI:', error.response ? error.response.data : error);
+                return `Error: ${error.response ? error.response.data.error : "Could not connect to AI."}`;
+            }
+        }
 
         async function sendMessage() {
             const input = document.getElementById('chat-input');
             const messages = document.getElementById('chat-messages');
             const messageText = input.value.trim();
-            
+
             if (!messageText) return;
 
             // Disable input while processing
             input.disabled = true;
-            
+
             try {
                 // Add user message to UI
                 const userDiv = document.createElement('div');
@@ -202,9 +203,9 @@ async function callChatGPT(userMessage) {
                 messages.appendChild(typingDiv);
                 messages.scrollTop = messages.scrollHeight;
 
-                // Call ChatGPT API
+                // Call AI
                 const response = await callChatGPT(messageText);
-                
+
                 // Remove typing indicator
                 const typingIndicator = messages.querySelector('.typing-indicator');
                 if (typingIndicator) {
@@ -256,9 +257,8 @@ async function callChatGPT(userMessage) {
 
         // Initialize
         window.onload = function() {
-            // Add any initialization if needed
+            console.log("🚀 Page Loaded: AI Chat Ready");
         };
-
     </script>
 </body>
 </html>
