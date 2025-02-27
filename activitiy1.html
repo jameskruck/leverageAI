@@ -224,57 +224,21 @@
         let conversationHistory = [];
 
         // ChatGPT API configuration
-        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
-        
-        async function callChatGPT(userMessage) {
-            try {
-                // Add user message to history
-                conversationHistory.push({
-                    role: "user",
-                    content: userMessage
-                });
+      const BACKEND_API = 'https://leverageai.onrender.com'; // Replace with your Render URL
 
-                const response = await axios.post(OPENAI_API_ENDPOINT, {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "You are a helpful learning companion, helping explain complex concepts through multiple approaches, examples, and analogies. Keep explanations clear and build understanding step by step."
-                        },
-                        ...conversationHistory
-                    ],
-                    temperature: 0.7
-                }, {
-                    headers: {
-                        'Authorization': `Bearer ${getApiKey()}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                // Add AI response to history
-                const aiResponse = response.data.choices[0].message.content;
-                conversationHistory.push({
-                    role: "assistant",
-                    content: aiResponse
-                });
+async function callChatGPT(userMessage) {
+    try {
+        const response = await axios.post(BACKEND_API, {
+            message: userMessage
+        });
 
-                return aiResponse;
-            } catch (error) {
-                console.error('Error calling ChatGPT:', error);
-                if (error.response) {
-                    throw new Error(error.response.data.error.message || 'Error connecting to ChatGPT');
-                } else if (error.request) {
-                    throw new Error('No response from ChatGPT. Please check your internet connection.');
-                } else {
-                    throw new Error('Error setting up the request to ChatGPT.');
-                }
-            }
-        }
+        return response.data.response; // The AI's reply
+    } catch (error) {
+        console.error('Error calling AI:', error);
+        return "Error connecting to AI.";
+    }
+}
 
-        // API Key Management
-        function getApiKey() {
-            return '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'; // Replace with your actual API key
-        }
 
         async function sendMessage() {
             const input = document.getElementById('chat-input');
