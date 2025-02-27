@@ -21,14 +21,14 @@ def chat():
     user_message = data.get("message", "")
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a helpful AI."},
-                {"role": "user", "content": user_message}
-            ],
-            temperature=0.7
-        )
+response = openai.client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a helpful AI."},
+        {"role": "user", "content": user_message}
+    ],
+    temperature=0.7
+)
         return jsonify({"response": response["choices"][0]["message"]["content"]})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
