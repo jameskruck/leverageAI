@@ -21,7 +21,7 @@ def chat():
     user_message = data.get("message", "")
 
     try:
-        response = openai.ChatCompletion.create(
+        response = openai.client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful AI."},
