@@ -3,151 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Workshop - Fun with Creative AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>GenAI Workshop - James Kruck, PhD</title>
+    <meta name="description" content="Explore how Generative AI can be used in teaching and learning with this workshop by James Kruck, PhD.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="font-bold text-xl text-blue-600" aria-label="James Kruck, PhD Home Page">James Kruck, PhD</a>
+                </div>
+                <div class="hidden md:block" aria-label="Desktop Navigation">
+                    <div class="flex space-x-8">
+                        <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                        <a href="index.html" class="text-blue-600 font-medium" aria-current="page">GenAI Workshop</a>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </nav>
-    </header>
-
-     <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>
-                    <span class="text-blue-600 font-medium">Workshop Home</span>
-                </li>
-            </ol>
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+            <div class="flex flex-col space-y-3">
+                <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Home</a>
+                <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Projects</a>
+                <a href="index.html" class="text-blue-600 font-medium py-2 px-3 rounded-md bg-blue-50">GenAI Workshop</a>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-5xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">GenAI in Teaching and Learning</h2>
-                <div class="space-y-4">
-                    <div class="space-y-2">
-                        <p>Are you curious about how your students might be using GenAI? Are you wondering how you might integrate GenAI into your classroom? Are you thinking about how you might assess your students knowing that they're using GenAI?</p>
-                    </div>
-                    <div class="space-y-2">
-                        <p>This workshop will introduce you to how GenAI might be used in your classrooms. You'll get a chance to experiment with GenAI and explore its capabilities. At the end of the session, you will walk away with a plan to implement GenAI in your classroom.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <p>Our first step is to see how we can use GenAI as a collaborator. In this activity, we're going to see if GenAI can come up with a creative introduction for ourselves.</p>
+    <!-- Hero Section -->
+    <section class="hero hero-blue" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-2/3">
+                    <h1 id="hero-heading" class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4">
+                        GenAI in Teaching & Learning
+                    </h1>
+                    <p class="text-xl text-gray-800 mb-6">
+                        Explore how GenAI can be used in teaching and learning.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6" aria-label="Workshop focus areas">
+                        <span class="tag tag-blue">Faculty Development</span>
+                        <span class="tag tag-purple">AI in Education</span>
+                        <span class="tag tag-green">Educational Technology</span>
+                        <span class="tag tag-orange">Assessment Strategies</span>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-lg font-semibold mb-3">Example: The Iterative Process</h2>
-                <p class="mb-4">See how an introduction evolves through multiple interactions:</p>
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="content-section">
+            <h2 class="text-2xl font-bold mb-4">GenAI in Teaching and Learning</h2>
+            <p class="mb-4">Are you curious about how your students might be using GenAI? Wondering how to integrate it into your classroom? Thinking about assessment strategies in the AI era?</p>
+            <p class="mb-6">This workshop introduces you to the possibilities of GenAI, allowing hands-on experimentation and implementation planning for your classroom.</p>
+        </div>
+
+        <!-- Iterative Process Example -->
+        <div class="content-section">
+            <h3 class="text-xl font-semibold mb-4">Example: The Iterative Process</h3>
+            <p class="mb-4">See how an introduction evolves through multiple interactions:</p>
+            
+            <div class="bg-white p-4 rounded shadow-sm mb-4">
+                <h4 class="text-sm font-medium text-blue-600">Initial Prompt:</h4>
+                <p class="text-sm mt-1">"Write a movie trailer intro about someone who loves gardening and just learned to make pottery."</p>
+            </div>
+            
+            <!-- Interactive AI Chat -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                <h3 class="text-lg font-semibold mb-3">Try it yourself!</h3>
+                <p class="mb-4">Experiment with the iterative process by chatting with an AI assistant below.</p>
                 
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded shadow-sm">
-                        <h3 class="text-sm font-medium text-blue-600">Initial Prompt:</h3>
-                        <p class="text-sm mt-1">"Write a movie trailer intro about someone who loves gardening and just learned to make pottery."</p>
-                        
-                        <h3 class="text-sm font-medium text-blue-600 mt-3">First Response:</h3>
-                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
-                            🎬 In a world of concrete and glass, one person dared to get their hands dirty. From nurturing seeds to shaping clay, they're about to discover that growth takes many forms...
-                        </p>
-
-                        <h3 class="text-sm font-medium text-blue-600 mt-3">Refinement Prompt:</h3>
-                        <p class="text-sm mt-1">"That's good! Could you make it more specific about how gardening and pottery connect?"</p>
-
-                        <h3 class="text-sm font-medium text-blue-600 mt-3">Improved Response:</h3>
-                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
-                            🎬 In a world of concrete and glass, one person discovered the ancient magic of earth itself. By day, they coax life from soil in their flourishing garden. By night, they transform raw clay into vessels worthy of their homegrown harvests. Two crafts, one element, endless possibilities...
-                        </p>
-
-                        <h3 class="text-sm font-medium text-blue-600 mt-3">Final Refinement:</h3>
-                        <p class="text-sm mt-1">"Love it! Could you add something about sharing these creations with others?"</p>
-
-                        <h3 class="text-sm font-medium text-blue-600 mt-3">Final Version:</h3>
-                        <p class="text-sm mt-1 pl-4 border-l-2 border-gray-200">
-                            🎬 In a world of concrete and glass, one person discovered the ancient magic of earth itself. By day, they coax life from soil in their flourishing garden. By night, they transform raw clay into vessels worthy of their homegrown harvests. Now, they're bringing people together, one handcrafted pot of homegrown herbs at a time. Two crafts, one element, and a community growing stronger through the power of creation...
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-lg font-semibold mb-3">Helpful Refinement Prompts</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <h3 class="font-medium mb-2">For Adding Detail</h3>
-                        <ul class="text-sm space-y-1">
-                            <li>• "Could you add more specific details about...?"</li>
-                            <li>• "How could we incorporate [specific element]?"</li>
-                            <li>• "Can you expand on the part about...?"</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-medium mb-2">For Changing Style</h3>
-                        <ul class="text-sm space-y-1">
-                            <li>• "Could you make it more [dramatic/funny/serious]?"</li>
-                            <li>• "Try using the style of [genre/author/show]"</li>
-                            <li>• "Can we adjust the tone to be more...?"</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white border rounded-lg p-6 mb-6">
-                <h2 class="text-xl font-semibold mb-3">Your Turn!</h2>
-                <div class="border rounded-lg mb-4">
-                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50">
-                        <!-- Initial message -->
+                <div id="chat-container" class="border rounded-lg mb-4">
+                    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50">
                         <div class="flex justify-start mb-4">
                             <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
-                                I'd love to help create an epic introduction about you! Tell me about your interests and achievements, and what style you'd like (movie trailer, nature documentary, superhero story, etc.). Let's have some fun with it! 
+                                Hello! I'm here to help you explore AI in education. Try asking me a question or giving me a prompt to work with.
                             </div>
                         </div>
                     </div>
-                    <div class="border-t p-4 bg-white">
-                        <div class="flex space-x-2">
-                            <input type="text" id="chat-input" 
-                                class="flex-1 p-2 border rounded-lg"
-                                placeholder="Share your interests and preferred style...">
-                            <button onclick="sendMessage()" 
-                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                Send
-                            </button>
-                        </div>
+                    <div class="flex border-t p-2">
+                        <input type="text" id="chat-input" placeholder="Type your message here..." class="flex-1 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg">
+                        <button onclick="sendMessage()" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500">Send</button>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-yellow-50 p-4 rounded mb-6">
-                <h3 class="font-medium mb-2">What We're Learning</h3>
+            
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
+                <h3 class="text-lg font-semibold mb-3">Helpful Refinement Prompts</h3>
                 <ul class="list-disc pl-6 space-y-2 text-sm">
-                    <li>How to frame effective prompts for AI</li>
-                    <li>The importance of providing clear context</li>
-                    <li>How AI adapts tone and style</li>
-                    <li>The iterative nature of AI interaction - refining and building on responses</li>
-                    <li>The collaborative process between human and AI</li>
+                    <li>"Could you add more specific details about...?"</li>
+                    <li>"How could we incorporate [specific element]?"</li>
+                    <li>"Can you expand on the part about...?"</li>
+                    <li>"Please make this more [dramatic/humorous/professional]."</li>
+                    <li>"Rewrite this for a [specific audience]."</li>
                 </ul>
             </div>
-
+            
             <div class="flex justify-end">
-                <a href="activity1.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                <a href="activity1.html" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     Next: AI as Learning Companion
                 </a>
             </div>
         </div>
     </main>
 
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">© 2025 James Kruck, PhD. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Designed with a focus on accessibility and inclusive design principles.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button 
+        id="scrollToTopBtn" 
+        class="scroll-top-btn bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        aria-label="Scroll to top"
+    >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Store conversation history
         let conversationHistory = [];
 

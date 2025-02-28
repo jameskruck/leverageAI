@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Workshop - Activity 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="header-nav shadow-sm no-print">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content Wrapper -->
+    <div class="flex flex-grow min-h-0">
+        <div class="flex flex-col flex-grow">
+            <main class="main-content flex-grow">
+                <!-- Progress Bar -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-4" role="navigation" aria-label="Progress">
+                    <div class="flex items-center justify-between max-w-5xl mx-auto">
+                        <div class="w-20" data-step="1">
+                            <a href="activity1.html" class="flex flex-col items-center w-20 group hover:opacity-75" aria-current="page">
+                                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold mb-2">1</div>
+                                <span class="text-blue-600 font-semibold text-center text-sm">Concept</span>
+                            </a>
+                        </div>
+                        <div class="h-1 w-16 bg-gray-300" data-line="1"></div>
+                        <div class="w-20" data-step="2">
+                            <div class="flex flex-col items-center w-20">
+                                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-white font-semibold mb-2">2</div>
+                                <span class="text-gray-500 text-center text-sm">Exploration</span>
+                            </div>
+                        </div>
+                        <div class="h-1 w-16 bg-gray-300" data-line="2"></div>
+                        <div class="w-20" data-step="3">
+                            <div class="flex flex-col items-center w-20">
+                                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-white font-semibold mb-2">3</div>
+                                <span class="text-gray-500 text-center text-sm">Reflection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h1 class="text-2xl font-bold mb-4">AI as Creative Partner</h1>
+                    
+                    <div class="bg-gray-50 p-4 rounded mb-6">
+                        <h2 class="text-xl font-semibold mb-3">Step 1: Choose Your Concept</h2>
+                        <p class="mb-3">Think of a concept from your course that students often find difficult to understand. This could be:</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-4">
+                            <li>A theoretical framework or model</li>
+                            <li>A complex process or procedure</li>
+                            <li>An abstract principle or idea</li>
+                        </ul>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block font-medium mb-2">Concept Description</label>
+                                <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" placeholder="Describe the concept and why students find it challenging..." oninput="saveInput('concept')"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 mb-6">
+                        <h2 class="text-xl font-semibold mb-3">AI Chat</h2>
+                        <p class="mb-4">Use this space to interact with AI to explore different ways of explaining your concept.</p>
+                        <div class="border rounded-lg mb-4">
+                            <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
+                            <div class="border-t p-4 bg-white">
+                                <div class="flex space-x-2">
+                                    <input type="text" id="chat-input" class="flex-1 p-2 border rounded-lg" placeholder="Type your message...">
+                                    <button onclick="sendMessage()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-medium mb-2">Key Insights</label>
+                            <textarea id="insights" class="w-full border rounded p-2 min-h-[100px]" placeholder="Note the most useful explanations and insights from your AI conversation..." oninput="saveInput('insights')"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <a href="activity2.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">Next Activity</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Updated ChatGPT Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        let conversationHistory = [];
+        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+
+        async function callChatGPT(userMessage) {
+            try {
+                conversationHistory.push({ role: "user", content: userMessage });
+
+                const response = await axios.post(OPENAI_API_ENDPOINT, {
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        { role: "system", content: "You are a helpful AI assistant helping faculty explore ways to teach difficult concepts to students." },
+                        ...conversationHistory
+                    ],
+                    temperature: 0.7
+                }, {
+                    headers: { 'Authorization': `Bearer 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`, 'Content-Type': 'application/json' }
+                });
+
+                const aiResponse = response.data.choices[0].message.content;
+                conversationHistory.push({ role: "assistant", content: aiResponse });
+                return aiResponse;
+            } catch (error) {
+                throw new Error(error.response?.data?.error?.message || 'An error occurred while communicating with ChatGPT.');
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const messageText = input.value.trim();
+
+            if (!messageText) return;
+
+            appendMessage('user', messageText);
+            input.value = '';
+            input.disabled = true;
+
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'flex justify-start mb-4 typing-indicator';
+            typingDiv.innerHTML = `<div class="bg-gray-100 rounded-lg py-2 px-4"><span class="typing-dots">AI is thinking...</span></div>`;
+            messages.appendChild(typingDiv);
+            messages.scrollTop = messages.scrollHeight;
+
+            try {
+                const response = await callChatGPT(messageText);
+                messages.removeChild(typingDiv);
+                appendMessage('assistant', response);
+            } catch (error) {
+                messages.removeChild(typingDiv);
+                appendMessage('error', error.message);
+            } finally {
+                input.disabled = false;
+                input.focus();
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        function appendMessage(type, content) {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            const cssClass = type === 'user' ? 'bg-blue-600 text-white' : type === 'assistant' ? 'bg-white border' : 'bg-red-100 text-red-700';
+            div.className = type === 'user' ? 'flex justify-end mb-4' : 'flex justify-start mb-4';
+            div.innerHTML = `<div class="${cssClass} rounded-lg py-2 px-4 max-w-[80%]">${content}</div>`;
+            messages.appendChild(div);
+        }
+
+        window.onload = function() {
+            document.getElementById('chat-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') sendMessage();
+            });
+        };
+    </script>
+</body>
+</html>

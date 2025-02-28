@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workshop - Fun with Creative AI</title>
+    <meta name="description" content="Explore how GenAI can be used in teaching and learning.">
+    
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-xl text-blue-600">GenAI Workshop</a>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li>
+                    <span class="text-blue-600 font-medium">Workshop Home</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <main id="main-content" class="flex-grow max-w-5xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <section class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-xl font-semibold mb-3">GenAI in Teaching and Learning</h2>
+                <p>Are you curious about how your students might be using GenAI? Wondering how to integrate it into your classroom? Thinking about assessment strategies in the AI era?</p>
+                <p>This workshop introduces you to the possibilities of GenAI, allowing hands-on experimentation and implementation planning for your classroom.</p>
+            </section>
+
+            <section class="bg-gray-50 p-4 rounded mb-6">
+                <h2 class="text-lg font-semibold mb-3">Example: The Iterative Process</h2>
+                <p>See how an introduction evolves through multiple interactions:</p>
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <h3 class="text-sm font-medium text-blue-600">Initial Prompt:</h3>
+                    <p class="text-sm mt-1">"Write a movie trailer intro about someone who loves gardening and just learned to make pottery."</p>
+                </div>
+            </section>
+            
+            <section class="bg-blue-50 p-4 rounded mb-6">
+                <h2 class="text-lg font-semibold mb-3">Helpful Refinement Prompts</h2>
+                <ul class="list-disc pl-6 space-y-2 text-sm">
+                    <li>"Could you add more specific details about...?"</li>
+                    <li>"How could we incorporate [specific element]?"</li>
+                    <li>"Can you expand on the part about...?"</li>
+                </ul>
+            </section>
+            
+            <div class="flex justify-end">
+                <a href="activity1.html" class="btn-primary">Next: AI as Learning Companion</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 GenAI Workshop. All rights reserved.</p>
+        </div>
+    </footer>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        // Store conversation history
+        let conversationHistory = [];
+
+        // API endpoint (Backend on Render)
+        const BACKEND_API = 'https://leverageai.onrender.com/chat';
+
+        async function callChatGPT(userMessage) {
+            try {
+                const response = await axios.post(BACKEND_API, {
+                    message: userMessage
+                });
+
+                console.log("✅ AI Response:", response.data); // Debugging log
+                return response.data.response;
+            } catch (error) {
+                console.error('❌ Error calling AI:', error.response ? error.response.data : error);
+                return `Error: ${error.response ? error.response.data.error : "Could not connect to AI."}`;
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const messageText = input.value.trim();
+
+            if (!messageText) return;
+
+            // Disable input while processing
+            input.disabled = true;
+
+            try {
+                // Add user message to UI
+                const userDiv = document.createElement('div');
+                userDiv.className = 'flex justify-end mb-4';
+                userDiv.innerHTML = `
+                    <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                        ${messageText}
+                    </div>
+                `;
+                messages.appendChild(userDiv);
+
+                // Clear input
+                input.value = '';
+
+                // Show typing indicator
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'flex justify-start mb-4 typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="bg-gray-100 rounded-lg py-2 px-4">
+                        <span class="typing-dots">AI is thinking...</span>
+                    </div>
+                `;
+                messages.appendChild(typingDiv);
+                messages.scrollTop = messages.scrollHeight;
+
+                // Call AI
+                const response = await callChatGPT(messageText);
+
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Add AI response
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex justify-start mb-4';
+                aiDiv.innerHTML = `
+                    <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                        ${response}
+                    </div>
+                `;
+                messages.appendChild(aiDiv);
+
+            } catch (error) {
+                // Remove typing indicator
+                const typingIndicator = messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    messages.removeChild(typingIndicator);
+                }
+
+                // Show error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'flex justify-center mb-4';
+                errorDiv.innerHTML = `
+                    <div class="bg-red-100 text-red-700 rounded-lg py-2 px-4">
+                        ${error.message}
+                    </div>
+                `;
+                messages.appendChild(errorDiv);
+            } finally {
+                // Re-enable input
+                input.disabled = false;
+                input.focus();
+                
+                // Scroll to bottom
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize
+        window.onload = function() {
+            console.log("🚀 Page Loaded: AI Chat Ready");
+        };
+    </script>
+</body>
+</html>
