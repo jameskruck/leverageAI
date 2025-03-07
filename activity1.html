@@ -3,183 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persuasion Impossible - Document Your Process</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>GenAI Workshop - AI as a Learning Companion</title>
+    <meta name="description" content="Explore how AI can serve as a learning companion to understand difficult concepts.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-xl font-bold">Persuasion Impossible</h1>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="font-bold text-xl text-blue-600" aria-label="James Kruck, PhD Home Page">James Kruck, PhD</a>
+                </div>
+                <div class="hidden md:block" aria-label="Desktop Navigation">
+                   <div class="flex space-x-8">
+                        <a href="https://jameskruck.com" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                        <a href="index.html" class="text-blue-600 font-medium" aria-current="page">GenAI Workshop</a>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </nav>
-    </header>
-
-   <!-- Navigation -->
-<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+            <div class="flex flex-col space-y-3">
+                <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Home</a>
+                <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Projects</a>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">GenAI Workshop</a>
+                <a href="activity1.html" class="text-blue-600 font-medium py-2 px-3 rounded-md bg-blue-50">AI as Learning Companion</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>Workshop Home</li>
-                 </li>
-                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li>
+                    <a href="index.html" class="hover:text-gray-900 text-link">Workshop Home</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span class="text-blue-600 font-medium">Document Your Process</span>
+                    <span class="text-blue-600 font-medium">AI as a Learning Companion</span>
                 </li>
             </ol>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-5xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <h1 class="text-2xl font-bold mb-4">Document Your Process</h1>
+    <!-- Hero Section -->
+    <section class="hero hero-blue" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 id="hero-heading" class="text-3xl font-bold text-gray-900 mb-4">AI as a Learning Companion</h1>
+                <p class="text-xl text-gray-800 mb-6">
+                    Experience how AI can help explain complex concepts through multiple approaches, examples, and analogies.
+                </p>
+                <div class="flex flex-wrap gap-3" aria-label="Topic tags">
+                    <span class="tag tag-blue">Educational Technology</span>
+                    <span class="tag tag-green">AI in Learning</span>
+                    <span class="tag tag-purple">Concept Exploration</span>
+                    <span class="tag tag-orange">Teaching Innovation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Introduction -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Matters</h2>
+            <p class="mb-4 text-gray-800">Recent research shows that while 45% of students are already using AI in their coursework, 85% of instructors have not yet incorporated it into their teaching. This gap presents both challenges and opportunities:</p>
             
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Part One: Initial Proposal</h2>
-                <div class="space-y-3">
-                    <p>To begin your Persuasion Impossible journey, you'll need to identify a persuasive challenge that stretches your abilities and plan how you and AI will collaborate to tackle it.</p>
-                    <ul class="list-disc pl-6">
-                        <li>Select a persuasive task that genuinely feels difficult or impossible for you</li>
-                        <li>Define clear roles and expectations for the human-AI collaboration</li>
-                        <li>Establish specific success metrics to evaluate your outcomes</li>
-                    </ul>
-                    <p class="mt-4">The activities below will help you develop your initial proposal (200-400 words) that outlines your challenge, collaboration approach, and success metrics.</p>
-                </div>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 1: Identify Your Persuasive Challenge</h2>
-                <p class="mb-3">Choose a persuasive task that will stretch or exceed your current persuasive abilities. Consider challenges such as:</p>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li>Convincing a skeptical audience about a complex or controversial topic</li>
-                    <li>Creating persuasive content for an unfamiliar medium or format</li>
-                    <li>Crafting arguments for a position you personally find difficult to support</li>
-                    <li>Developing persuasive messages for audiences with vastly different values or perspectives</li>
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Students primarily use AI for writing support (36%), brainstorming (29%), and understanding difficult concepts (20%)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Many instructors express concerns about critical thinking and learning retention</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>However, when thoughtfully implemented, AI can serve as a "force multiplier" for effective teaching practices</span>
+                    </li>
                 </ul>
-                
-                <div class="space-y-4">
-                    <div>
-                        <label class="block font-medium mb-2">Describe Your Challenge</label>
-                        <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
-                            placeholder="What persuasive task have you chosen? Why does it feel difficult or impossible for you? How will it stretch your abilities?" 
-                            oninput="saveInput('concept')"></textarea>
-                    </div>
-                </div>
+                <p class="mt-4">Today, we'll start by experiencing AI as a learning tool ourselves, helping build firsthand understanding of its potential and limitations.</p>
             </div>
+        </div>
 
-            <div class="bg-white border rounded-lg p-6 mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 2: Plan Your Collaboration Approach</h2>
-                <p class="mb-4">Describe how you and AI will work together to achieve your persuasive task:</p>
-                <div class="grid grid-cols-2 gap-6 mb-4">
-                    <div class="bg-green-50 p-4 rounded">
-                        <h3 class="font-medium mb-2">Your Unique Strengths</h3>
-                        <textarea id="human-strengths" class="w-full border rounded p-2 min-h-[100px]" 
-                            placeholder="What unique strengths, knowledge, or perspectives do you bring to this challenge?" 
-                            oninput="saveInput('human-strengths')"></textarea>
-                    </div>
-                    <div class="bg-blue-50 p-4 rounded">
-                        <h3 class="font-medium mb-2">AI's Potential Strengths</h3>
-                        <textarea id="ai-strengths" class="w-full border rounded p-2 min-h-[100px]" 
-                            placeholder="What strengths might AI bring to this challenge? How could it complement your abilities?" 
-                            oninput="saveInput('ai-strengths')"></textarea>
-                    </div>
-                </div>
-                <div class="bg-purple-50 p-4 rounded mb-6">
-                    <h3 class="font-medium mb-2">Collaborative Potential</h3>
-                    <textarea id="collaboration" class="w-full border rounded p-2 min-h-[100px]" 
-                        placeholder="What do you imagine you and AI will achieve in collaboration that you could not do alone?" 
-                        oninput="saveInput('collaboration')"></textarea>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded mb-6">
-                    <h3 class="text-lg font-semibold mb-3">Example Collaboration Process</h3>
-                    <p class="mb-3">Here's how a human-AI collaboration might work for a persuasive challenge:</p>
-                    <div class="bg-white rounded-lg p-4 space-y-3">
-                        <div class="flex justify-end">
-                            <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
-                                I need to create a compelling environmental proposal for city council members who are skeptical about climate initiatives. I struggle with translating technical information into persuasive policy language.
-                            </div>
-                        </div>
-                        <div class="flex justify-start">
-                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
-                                I can help with that challenge. Let's break down our approach:
-
-                                1. First, what environmental proposal are you supporting specifically?
-                                2. What do we know about the council members' priorities (economic, safety, etc.)?
-                                3. What technical information will we need to translate?
-                                
-                                I can help by:
-                                - Reframing technical concepts in accessible terms
-                                - Suggesting appeals based on different value frameworks
-                                - Helping structure arguments in a persuasive sequence
-                            </div>
-                        </div>
-                        <div class="flex justify-end">
-                            <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
-                                I want to propose a green infrastructure initiative. The council members care most about economic development and budget constraints. I have scientific data on stormwater management, urban heat reduction, and biodiversity, but I'm not sure how to make it compelling.
-                            </div>
-                        </div>
-                        <div class="flex justify-start">
-                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
-                                Perfect! Let's reframe your green infrastructure initiative through an economic lens:
-
-                                Key message framework:
-                                1. Cost savings: How green infrastructure reduces long-term infrastructure costs
-                                2. Economic development: How these projects create local jobs and business opportunities
-                                3. Property value increases: Data on how urban green spaces improve property values
-                                4. Disaster mitigation: Financial benefits of reduced flood damage
-
-                                For your stormwater data, we could translate this into: "Every $1 invested in green stormwater infrastructure saves $4 in prevented flood damage and reduced gray infrastructure maintenance."
-
-                                Would you like me to help craft specific economic arguments using your technical data?
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Step 1 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 1: Choose Your Learning Challenge</h2>
+            <p class="mb-4 text-gray-800">Think of a concept you'd like to understand better. This could be:</p>
+            
+            <ul class="space-y-2 mb-6 pl-6">
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>A teaching method or framework you've heard about but haven't fully explored</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>A technical concept that would help you better support your students</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>A topic where you'd benefit from additional examples or explanations</span>
+                </li>
+            </ul>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+                <label class="block font-medium mb-2">Describe Your Learning Challenge</label>
+                <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
+                    placeholder="What would you like to understand better? What makes this challenging?" 
+                    oninput="saveInput('concept')"></textarea>
             </div>
+        </div>
 
-
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 3: Define Success Metrics</h2>
-                <p class="mb-3">How will you know if your persuasive effort succeeded? List 3-5 specific metrics:</p>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block font-medium mb-2">Success Metrics</label>
-                        <textarea id="metrics" class="w-full border rounded p-2 min-h-[100px]" 
-                            placeholder="What specific quantitative and/or qualitative benchmarks will you use to measure success? (Example: Achieving a 20% positive response rate from initially skeptical audience members)" 
-                            oninput="saveInput('metrics')"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 4: Document Your AI Interactions</h2>
-                <p class="mb-3">For your project, you'll need to log at least five of your interactions with AI using this format:</p>
-                <div class="bg-white p-4 rounded shadow-sm mb-4">
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li><strong>Date:</strong> When the interaction occurred</li>
-                        <li><strong>AI Tool Used:</strong> Which AI system you worked with</li>
-                        <li><strong>Purpose:</strong> Goal of the interaction (e.g., "Brainstorm persuasive angles" or "Get feedback on draft")</li>
-                        <li><strong>Highlights:</strong> Key prompts and responses from the interaction</li>
-                        <li><strong>Key Takeaways:</strong> What you learned about AI collaboration</li>
+        <!-- Step 2 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 2: Engage with AI</h2>
+            <p class="mb-4 text-gray-800">Research shows effective AI interactions often involve specific strategies:</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="info-box info-box-green">
+                    <h4 class="font-semibold mb-2 text-green-800">Proven Strategies</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Ask for multiple examples</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Request different explanations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Connect to familiar concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Break down complex ideas</span>
+                        </li>
                     </ul>
                 </div>
-                <p>The AI chat below can help you begin exploring your persuasive challenge. Remember to save highlights from your conversation to include in your project documentation.</p>
+                <div class="info-box info-box-red">
+                    <h4 class="font-semibold mb-2 text-red-800">Common Pitfalls</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Accepting first answer only</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Not verifying information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Missing key context</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Overlooking limitations</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-                
-            <div class="border rounded-lg mb-4">
+            
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Example Learning Dialogue</h3>
+                <p class="mb-3 text-gray-800">Here's how you might work with AI to understand a challenging concept:</p>
+                <div class="bg-white rounded-lg p-4 space-y-3 shadow-sm">
+                    <div class="flex justify-end">
+                        <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                            I'm having trouble understanding Work Breakdown Structure (WBS) in project management. Can you explain it?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                            A Work Breakdown Structure (WBS) is like creating a detailed map of your project. Think of it as breaking down a big task into smaller, manageable pieces in a hierarchical way.
+
+                            For example, if you were planning a birthday party, your WBS might look like:
+                            1. Venue
+                               - Research locations
+                               - Book space
+                               - Arrange setup
+                            2. Food
+                               - Plan menu
+                               - Order cake
+                               - Arrange catering
+                            
+                            Would you like to try creating a simple WBS for a project you're familiar with?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                            That helps! But I'm still confused about the difference between a WBS and a regular to-do list.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                            That's a common misconception! The key difference is that a WBS is hierarchical and scope-focused, while a to-do list is typically sequential and task-focused.
+
+                            Let me show you with your birthday party example:
+
+                            To-Do List:
+                            1. Call venues
+                            2. Book venue
+                            3. Order cake
+                            4. Send invitations
+                            
+                            WBS:
+                            1. Event Planning
+                               - Venue Management
+                                 * Location research
+                                 * Contract negotiation
+                               - Guest Management
+                                 * Create guest list
+                                 * Design invitations
+                                 * Track RSVPs
+
+                            See how the WBS shows relationships and categories, while the to-do list just shows sequence?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-[80%]">
+                            Oh, I think I get it. So would milestones go in a WBS?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                            Another great question that touches on a common confusion! Actually, milestones don't belong in a WBS - they belong in your project schedule or timeline.
+
+                            A WBS focuses on deliverables (the what), not timing (the when). Think of it this way:
+                            - WBS: Shows what needs to be created/delivered
+                            - Timeline: Shows when things happen
+                            - To-do list: Shows individual actions to take
+
+                            Would you like to try identifying what elements from your project would go in each of these?
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box info-box-blue mb-6">
+                <h3 class="font-semibold mb-2 text-blue-800">Your Turn</h3>
+                <p>Now try exploring your own challenging concept below. Remember to:</p>
+                <ul class="space-y-2 mb-4">
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Start with a clear description of what you're trying to understand</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Ask follow-up questions when something isn't clear</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Challenge your understanding by posing "what if" scenarios</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Request concrete examples that connect to your experience</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-2 border border-gray-200 mb-6">
                 <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
                 <div class="border-t p-4 bg-white">
                     <div class="flex space-x-2">
                         <input type="text" id="chat-input" 
                             class="flex-1 p-2 border rounded-lg"
-                            placeholder="Ask AI for help with your persuasive challenge...">
+                            placeholder="Ask about your concept...">
                         <button onclick="sendMessage()" 
                             class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                             Send
@@ -187,18 +335,50 @@
                     </div>
                 </div>
             </div>
-                
-    <!--Navigation-->
-             <div class="flex justify-between mt-6">
-            <a href="#" onclick="history.back()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
-    <div class="flex justify-end">
-                <a href="activity2.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
-                    Next: Presentation Planning
-                </a>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 3: Reflect on the Experience</h2>
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+                <label class="block font-medium mb-2">Document Your Insights</label>
+                <textarea id="insights" class="w-full border rounded p-2 min-h-[100px]" 
+                    placeholder="What worked well in your AI interaction? What was challenging? How might this inform your teaching?" 
+                    oninput="saveInput('insights')"></textarea>
             </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between mt-6">
+            <a href="index.html" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
+            <a href="activity2.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                Next: Supporting Student Learning
+            </a>
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">© 2025 James Kruck, PhD. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Designed with a focus on accessibility and inclusive design principles.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button 
+        id="scrollToTopBtn" 
+        class="scroll-top-btn bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        aria-label="Scroll to top"
+    >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- ChatGPT Integration -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
         // Store conversation history
@@ -309,7 +489,7 @@
         
         // Load saved inputs
         function loadInputs() {
-            const fields = ['concept', 'human-strengths', 'ai-strengths', 'collaboration', 'metrics'];
+            const fields = ['concept', 'insights'];
             fields.forEach(id => {
                 const savedValue = localStorage.getItem(id);
                 if (savedValue) {
@@ -325,6 +505,24 @@
             }
         });
 
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Initialize
         window.onload = function() {
             loadInputs();
@@ -335,7 +533,7 @@
             aiDiv.className = 'flex justify-start mb-4';
             aiDiv.innerHTML = `
                 <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
-                    I can help you develop your persuasive challenge. Tell me about the persuasive task you're considering, and I'll help you refine it and explore collaboration strategies.
+                    Hello! I'm here to help you explore concepts you'd like to understand better. What topic would you like to learn about today?
                 </div>
             `;
             messages.appendChild(aiDiv);

@@ -4,115 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenAI Workshop - Summary & Resources</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Review key takeaways and resources from the GenAI in teaching and learning workshop.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
-<!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="font-bold text-xl text-blue-600" aria-label="James Kruck, PhD Home Page">James Kruck, PhD</a>
+                </div>
+                <div class="hidden md:block" aria-label="Desktop Navigation">
+                   <div class="flex space-x-8">
+                        <a href="https://jameskruck.com" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                        <a href="index.html" class="text-blue-600 font-medium" aria-current="page">GenAI Workshop</a>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </nav>
-    </header>
-   <!-- Navigation -->
-<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+            <div class="flex flex-col space-y-3">
+                <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Home</a>
+                <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Projects</a>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">GenAI Workshop</a>
+                <a href="activity1.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">AI as Learning Companion</a>
+                <a href="activity2.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Supporting Student Learning</a>
+                <a href="activity3.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Designing for AI-Enhanced Learning</a>
+                <a href="summary.html" class="text-blue-600 font-medium py-2 px-3 rounded-md bg-blue-50">Workshop Summary</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>Workshop Home</li>
-                 </li>
-                                   <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                     <span>AI as a Learning Companion</span>
+                <li>
+                    <a href="index.html" class="hover:text-gray-900 text-link">Workshop Home</a>
                 </li>
-                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span>Supporting Student Learning</span>
+                    <a href="activity1.html" class="hover:text-gray-900 text-link">AI as a Learning Companion</a>
                 </li>
-                 <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span>Designing for AI-Enhanced Learning</span>
+                    <a href="activity2.html" class="hover:text-gray-900 text-link">Supporting Student Learning</a>
                 </li>
-                                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span class="text-blue-600 font-medium">Workshop Summary</span>
+                    <a href="activity3.html" class="hover:text-gray-900 text-link">Designing for AI-Enhanced Learning</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-blue-600 font-medium">Workshop Summary</span>
                 </li>
             </ol>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-5xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <h1 class="text-2xl font-bold mb-4">Workshop Summary</h1>
+    <!-- Hero Section -->
+    <section class="hero hero-teal" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 id="hero-heading" class="text-3xl font-bold text-gray-900 mb-4">Workshop Summary</h1>
+                <p class="text-xl text-gray-800 mb-6">
+                    Reflecting on key insights and planning for continued implementation of AI-enhanced teaching.
+                </p>
+                <div class="flex flex-wrap gap-3" aria-label="Topic tags">
+                    <span class="tag tag-blue">Research Foundation</span>
+                    <span class="tag tag-green">Key Takeaways</span>
+                    <span class="tag tag-purple">Implementation Steps</span>
+                    <span class="tag tag-orange">Teaching Resources</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Key Takeaways</h2>
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Understanding AI's Role</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• AI as learning companion and tool</li>
-                            <li>• Balance of benefits and limitations</li>
-                            <li>• Importance of guided implementation</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>AI as learning companion and tool</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Balance of benefits and limitations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Importance of guided implementation</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Supporting Student Learning</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Multiple examples and explanations</li>
-                            <li>• Addressing misconceptions</li>
-                            <li>• Low-stakes practice opportunities</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Multiple examples and explanations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Addressing misconceptions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Low-stakes practice opportunities</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Course Design Strategies</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Authentic assessment approaches</li>
-                            <li>• Constructive alignment principles</li>
-                            <li>• Integration with learning outcomes</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Authentic assessment approaches</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Constructive alignment principles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Integration with learning outcomes</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Working with AI</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Iterative refinement process</li>
-                            <li>• Building on initial responses</li>
-                            <li>• Continuous dialogue approach</li>
-                            <li>• Progressive improvement</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Iterative refinement process</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Building on initial responses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Continuous dialogue approach</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Progressive improvement</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="bg-white p-4 rounded shadow-sm">
+                    <div class="bg-white p-4 rounded shadow-sm md:col-span-2">
                         <h3 class="font-medium text-blue-600 mb-2">Implementation Support</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Clear guidelines and policies</li>
-                            <li>• Student guidance frameworks</li>
-                            <li>• Continuous improvement process</li>
+                        <ul class="space-y-2 md:grid md:grid-cols-3 md:gap-4 md:space-y-0">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Clear guidelines and policies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Student guidance frameworks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Continuous improvement process</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Research Foundation</h2>
-                <p class="mb-4">This workshop draws from current research on AI in education:</p>
-                
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Research Foundation</h2>
+            <p class="mb-4 text-gray-800">This workshop draws from current research on AI in education:</p>
+            
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-6">
                 <div class="space-y-6">
-                    <div class="bg-white p-4 rounded">
-                        <h3 class="font-medium mb-2">Teaching Strategies & AI Integration</h3>
-                        <ul class="space-y-3 text-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-gray-900 mb-2">Teaching Strategies & AI Integration</h3>
+                        <ul class="space-y-3">
                             <li class="pl-4 border-l-2 border-blue-200">
                                 <span class="font-medium">Mollick & Mollick (2023)</span> - Five evidence-based strategies for implementing AI in teaching, including multiple examples, varied explanations, and addressing misconceptions.
                             </li>
@@ -122,9 +252,9 @@
                         </ul>
                     </div>
 
-                    <div class="bg-white p-4 rounded">
-                        <h3 class="font-medium mb-2">Academic Integrity & Assessment</h3>
-                        <ul class="space-y-3 text-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h3 class="font-medium text-gray-900 mb-2">Academic Integrity & Assessment</h3>
+                        <ul class="space-y-3">
                             <li class="pl-4 border-l-2 border-blue-200">
                                 <span class="font-medium">Latest Insights Report (2024)</span> - Current data on student and faculty perspectives, showing 45% student adoption vs 15% faculty adoption of AI tools.
                             </li>
@@ -135,34 +265,127 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white border rounded-lg p-6 mb-6">
-                <h2 class="text-xl font-semibold mb-3">Next Steps</h2>
-                <p class="mb-4">As you implement these ideas in your teaching:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-gray-50 p-4 rounded">
-                        <h3 class="font-medium text-blue-600 mb-2">Start Small</h3>
-                        <p class="text-sm">Choose one concept or assignment to redesign using these principles</p>
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Next Steps</h2>
+            <p class="mb-4 text-gray-800">As you implement these ideas in your teaching:</p>
+            
+            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 mb-6">
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 p-4 rounded">
+                        <h3 class="font-medium text-blue-700 mb-2">Start Small</h3>
+                        <p>Choose one concept or assignment to redesign using these principles</p>
                     </div>
-                    <div class="bg-gray-50 p-4 rounded">
-                        <h3 class="font-medium text-blue-600 mb-2">Gather Feedback</h3>
-                        <p class="text-sm">Monitor student engagement and learning outcomes</p>
+                    <div class="bg-blue-50 p-4 rounded">
+                        <h3 class="font-medium text-blue-700 mb-2">Gather Feedback</h3>
+                        <p>Monitor student engagement and learning outcomes</p>
                     </div>
-                    <div class="bg-gray-50 p-4 rounded">
-                        <h3 class="font-medium text-blue-600 mb-2">Build Community</h3>
-                        <p class="text-sm">Share experiences and learn from colleagues implementing AI-enhanced teaching</p>
+                    <div class="bg-blue-50 p-4 rounded">
+                        <h3 class="font-medium text-blue-700 mb-2">Build Community</h3>
+                        <p>Share experiences and learn from colleagues implementing AI-enhanced teaching</p>
                     </div>
                 </div>
             </div>
 
-            <div class="flex justify-between">
-                <a href="activity3.html" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-50 inline-block">
-                    Previous Activity
+            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-900">Additional Resources</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-blue-600 mb-3">Teaching & Learning Centers</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Contact your institution's teaching center for specific support and workshops</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Join AI in Education communities of practice at your institution</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-blue-600 mb-3">Online Resources</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Access examples of AI-enhanced assignments in the shared repository</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Explore faculty development options for AI literacy</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <a href="activity3.html" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back to Previous Activity</a>
+                <a href="index.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                    Return to Workshop Home
                 </a>
-                       </div>
+            </div>
         </div>
     </main>
 
-    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">© 2025 James Kruck, PhD. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Designed with a focus on accessibility and inclusive design principles.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button 
+        id="scrollToTopBtn" 
+        class="scroll-top-btn bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        aria-label="Scroll to top"
+    >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

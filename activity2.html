@@ -3,173 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenAI Workshop - Student Perspective</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>GenAI Workshop - Supporting Student Learning</title>
+    <meta name="description" content="Explore how AI can support student learning of challenging course concepts.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
-<!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="font-bold text-xl text-blue-600" aria-label="James Kruck, PhD Home Page">James Kruck, PhD</a>
+                </div>
+                <div class="hidden md:block" aria-label="Desktop Navigation">
+                   <div class="flex space-x-8">
+                        <a href="https://jameskruck.com" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                        <a href="index.html" class="text-blue-600 font-medium" aria-current="page">GenAI Workshop</a>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </nav>
-    </header>
-   <!-- Navigation -->
-<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+            <div class="flex flex-col space-y-3">
+                <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Home</a>
+                <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Projects</a>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">GenAI Workshop</a>
+                <a href="activity1.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">AI as Learning Companion</a>
+                <a href="activity2.html" class="text-blue-600 font-medium py-2 px-3 rounded-md bg-blue-50">Supporting Student Learning</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>Workshop Home</li>
-                 </li>
-                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                     <span>AI as a Learning Companion</span>
+                <li>
+                    <a href="index.html" class="hover:text-gray-900 text-link">Workshop Home</a>
                 </li>
-
-                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span class="text-blue-600 font-medium">Supporting Student Learning</span>
+                    <a href="activity1.html" class="hover:text-gray-900 text-link">AI as a Learning Companion</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-blue-600 font-medium">Supporting Student Learning</span>
                 </li>
             </ol>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-5xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <h1 class="text-2xl font-bold mb-4">Supporting Student Learning with AI</h1>
+    <!-- Hero Section -->
+    <section class="hero hero-green" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 id="hero-heading" class="text-3xl font-bold text-gray-900 mb-4">Supporting Student Learning</h1>
+                <p class="text-xl text-gray-800 mb-6">
+                    Explore how AI can help students understand difficult course concepts and develop strategies for effective integration.
+                </p>
+                <div class="flex flex-wrap gap-3" aria-label="Topic tags">
+                    <span class="tag tag-blue">AI in Education</span>
+                    <span class="tag tag-green">Student Support</span>
+                    <span class="tag tag-purple">Pedagogical Strategies</span>
+                    <span class="tag tag-orange">Learning Enhancement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Research-Based Framework</h2>
+            <p class="mb-4 text-gray-800">Current research identifies five key strategies for effectively integrating AI in teaching:</p>
             
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Research-Based Framework</h2>
-                <p class="mb-4">Current research identifies five key strategies for effectively integrating AI in teaching:</p>
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">1. Multiple Examples</h3>
-                        <p class="text-sm">Help students understand complex concepts through varied examples and contexts</p>
+                        <p>Help students understand complex concepts through varied examples and contexts</p>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">2. Varied Explanations</h3>
-                        <p class="text-sm">Address different learning styles and levels of understanding</p>
+                        <p>Address different learning styles and levels of understanding</p>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">3. Misconception Addressing</h3>
-                        <p class="text-sm">Identify and correct common misunderstandings early</p>
+                        <p>Identify and correct common misunderstandings early</p>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">4. Low-Stakes Testing</h3>
-                        <p class="text-sm">Frequent opportunities for self-assessment and feedback</p>
+                        <p>Frequent opportunities for self-assessment and feedback</p>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm md:col-span-2">
                         <h3 class="font-medium text-blue-600">5. Distributed Practice</h3>
-                        <p class="text-sm">Spread learning and reinforcement across time for better retention</p>
+                        <p>Spread learning and reinforcement across time for better retention</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 1: Choose a Course Concept</h2>
-                <p class="mb-3">Think of a concept from your course that students often find challenging. Consider:</p>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li>Topics where students frequently ask for additional explanations</li>
-                    <li>Concepts that benefit from multiple examples</li>
-                    <li>Ideas that build on previous knowledge</li>
-                </ul>
-                
-                <div class="space-y-4">
+        <!-- Step 1 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 1: Choose a Course Concept</h2>
+            <p class="mb-4 text-gray-800">Think of a concept from your course that students often find challenging. Consider:</p>
+            
+            <ul class="space-y-2 mb-6 pl-6">
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Topics where students frequently ask for additional explanations</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Concepts that benefit from multiple examples</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Ideas that build on previous knowledge</span>
+                </li>
+            </ul>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+                <label class="block font-medium mb-2">Describe the Challenging Concept</label>
+                <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
+                    placeholder="What concept do students often struggle with? Why is it challenging for them?" 
+                    oninput="saveInput('concept')"></textarea>
+            </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 2: Explore Student AI Usage</h2>
+            <p class="mb-4 text-gray-800">Current research shows how students use AI for learning:</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="info-box info-box-green">
+                    <h4 class="font-semibold mb-2 text-green-800">Common Student Uses</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Writing support (36%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Brainstorming (29%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Understanding concepts (20%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Research assistance (14%)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-box info-box-red">
+                    <h4 class="font-semibold mb-2 text-red-800">Faculty Concerns</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Critical thinking impact</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Information accuracy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Skill development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span>Academic integrity</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Explore Integration Strategies</h3>
+                <p class="mb-3 text-gray-800">Use the AI chat to explore how students might use AI to understand your chosen concept. Consider both:</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label class="block font-medium mb-2">Describe the Challenging Concept</label>
-                        <textarea id="concept" class="w-full border rounded p-2 min-h-[100px]" 
-                            placeholder="What concept do students often struggle with? Why is it challenging for them?" 
-                            oninput="saveInput('concept')"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white border rounded-lg p-6 mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 2: Explore Student AI Usage</h2>
-                <p class="mb-4">Current research shows how students use AI for learning:</p>
-                
-                <div class="grid grid-cols-2 gap-6 mb-4">
-                    <div class="bg-green-50 p-4 rounded">
-                        <h3 class="font-medium mb-2">Common Student Uses</h3>
-                        <ul class="list-disc pl-4 space-y-1 text-sm">
-                            <li>Writing support (36%)</li>
-                            <li>Brainstorming (29%)</li>
-                            <li>Understanding concepts (20%)</li>
-                            <li>Research assistance (14%)</li>
+                        <h4 class="font-medium mb-2">Productive Uses</h4>
+                        <ul class="space-y-1">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Getting varied explanations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Finding relevant examples</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Practice problem-solving</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Self-assessment</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="bg-red-50 p-4 rounded">
-                        <h3 class="font-medium mb-2">Faculty Concerns</h3>
-                        <ul class="list-disc pl-4 space-y-1 text-sm">
-                            <li>Critical thinking impact</li>
-                            <li>Information accuracy</li>
-                            <li>Skill development</li>
-                            <li>Academic integrity</li>
+                    <div>
+                        <h4 class="font-medium mb-2">Potential Pitfalls</h4>
+                        <ul class="space-y-1">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <span>Bypassing understanding</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <span>Over-reliance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <span>Missing key context</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <span>Accepting errors</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="bg-gray-50 p-4 rounded mb-4">
-                    <h3 class="font-medium mb-2">Explore Integration Strategies</h3>
-                    <p class="mb-3">Use the AI chat to explore how students might use AI to understand your chosen concept. Consider both:</p>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <h4 class="text-sm font-medium mb-2">Productive Uses</h4>
-                            <ul class="list-disc pl-4 text-sm space-y-1">
-                                <li>Getting varied explanations</li>
-                                <li>Finding relevant examples</li>
-                                <li>Practice problem-solving</li>
-                                <li>Self-assessment</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-medium mb-2">Potential Pitfalls</h4>
-                            <ul class="list-disc pl-4 text-sm space-y-1">
-                                <li>Bypassing understanding</li>
-                                <li>Over-reliance</li>
-                                <li>Missing key context</li>
-                                <li>Accepting errors</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="border rounded-lg mb-4">
-                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
-                    <div class="border-t p-4 bg-white">
-                        <div class="flex space-x-2">
-                            <input type="text" id="chat-input" 
-                                class="flex-1 p-2 border rounded-lg"
-                                placeholder="Try asking AI how students might approach this concept...">
-                            <button onclick="sendMessage()" 
-                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                Send
-                            </button>
-                        </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-2 border border-gray-200 mb-6">
+                <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
+                <div class="border-t p-4 bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" 
+                            class="flex-1 p-2 border rounded-lg"
+                            placeholder="Try asking AI how students might approach this concept...">
+                        <button onclick="sendMessage()" 
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Send
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Step 3: Document Insights</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Step 3: Document Insights</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
                         <label class="block font-medium mb-2">How AI Can Help Learning</label>
                         <textarea id="benefits" class="w-full border rounded p-2 min-h-[100px]" 
                             placeholder="What are the most valuable ways AI could support student understanding of this concept?"
                             oninput="saveInput('benefits')"></textarea>
                     </div>
-                    <div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
                         <label class="block font-medium mb-2">Ensuring Real Learning</label>
                         <textarea id="guidance" class="w-full border rounded p-2 min-h-[100px]" 
                             placeholder="How can you guide students to use AI effectively while ensuring they develop necessary skills?"
@@ -177,66 +322,58 @@
                     </div>
                 </div>
             </div>
-                   <!-- Navigation -->
+        </div>
+
+        <!-- Navigation -->
         <div class="flex justify-between mt-6">
-            <a href="#" onclick="history.back()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
-                <a href="activity3.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
-                    Next: Designing for AI-Enhanced Learning
-                </a>
-            </div>
+            <a href="activity1.html" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
+            <a href="activity3.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                Next: Designing for AI-Enhanced Learning
+            </a>
         </div>
     </main>
-     <!-- ChatGPT Integration -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">© 2025 James Kruck, PhD. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Designed with a focus on accessibility and inclusive design principles.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button 
+        id="scrollToTopBtn" 
+        class="scroll-top-btn bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        aria-label="Scroll to top"
+    >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- ChatGPT Integration -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
         // Store conversation history
         let conversationHistory = [];
 
-        // ChatGPT API configuration
-        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
-        
+        // API endpoint (Backend on Render)
+        const BACKEND_API = 'https://leverageai.onrender.com/chat';
+
         async function callChatGPT(userMessage) {
             try {
-                // Add user message to history
-                conversationHistory.push({
-                    role: "user",
-                    content: userMessage
+                const response = await axios.post(BACKEND_API, {
+                    message: userMessage
                 });
 
-                const response = await axios.post(OPENAI_API_ENDPOINT, {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "You are helping faculty explore how students might use AI to understand challenging course concepts. Consider both beneficial learning approaches and potential misuses."
-                        },
-                        ...conversationHistory
-                    ],
-                    temperature: 0.7
-                }, {
-                    headers: {
-                        'Authorization': `Bearer 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`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                // Add AI response to history
-                const aiResponse = response.data.choices[0].message.content;
-                conversationHistory.push({
-                    role: "assistant",
-                    content: aiResponse
-                });
-
-                return aiResponse;
+                console.log("✅ AI Response:", response.data); // Debugging log
+                return response.data.response;
             } catch (error) {
-                console.error('Error calling ChatGPT:', error);
-                if (error.response) {
-                    throw new Error(error.response.data.error.message || 'Error connecting to ChatGPT');
-                } else if (error.request) {
-                    throw new Error('No response from ChatGPT. Please check your internet connection.');
-                } else {
-                    throw new Error('Error setting up the request to ChatGPT.');
-                }
+                console.error('❌ Error calling AI:', error.response ? error.response.data : error);
+                return `Error: ${error.response ? error.response.data.error : "Could not connect to AI."}`;
             }
         }
 
@@ -275,7 +412,7 @@
                 messages.appendChild(typingDiv);
                 messages.scrollTop = messages.scrollHeight;
 
-                // Call ChatGPT API
+                // Call AI
                 const response = await callChatGPT(messageText);
                 
                 // Remove typing indicator
@@ -344,9 +481,48 @@
             }
         });
 
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Initialize
         window.onload = function() {
             loadInputs();
+            
+            // Add initial AI message
+            const messages = document.getElementById('chat-messages');
+            const aiDiv = document.createElement('div');
+            aiDiv.className = 'flex justify-start mb-4';
+            aiDiv.innerHTML = `
+                <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                    Hello! I'm here to help you explore how students might use AI to understand challenging course concepts. What concept would you like to discuss today?
+                </div>
+            `;
+            messages.appendChild(aiDiv);
         };
     </script>
 </body>

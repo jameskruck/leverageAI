@@ -3,195 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenAI Workshop - Reflection and Planning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>GenAI Workshop - Designing for AI-Enhanced Learning</title>
+    <meta name="description" content="Learn how to design effective assignments and provide student guidance for AI-enhanced learning environments.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
-<!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-xl font-bold">GenAI Workshop</h1>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="font-bold text-xl text-blue-600" aria-label="James Kruck, PhD Home Page">James Kruck, PhD</a>
+                </div>
+                <div class="hidden md:block" aria-label="Desktop Navigation">
+                   <div class="flex space-x-8">
+                        <a href="https://jameskruck.com" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                        <a href="index.html" class="text-blue-600 font-medium" aria-current="page">GenAI Workshop</a>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </nav>
-    </header>
-   <!-- Navigation -->
-<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+            <div class="flex flex-col space-y-3">
+                <a href="https://jameskruck.com/index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Home</a>
+                <a href="https://jameskruck.com/projects.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Projects</a>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">GenAI Workshop</a>
+                <a href="activity1.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">AI as Learning Companion</a>
+                <a href="activity2.html" class="text-gray-700 hover:text-blue-600 transition py-2 px-3 rounded-md">Supporting Student Learning</a>
+                <a href="activity3.html" class="text-blue-600 font-medium py-2 px-3 rounded-md bg-blue-50">Designing for AI-Enhanced Learning</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>Workshop Home</li>
-                 </li>
-                                   <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                     <span>AI as a Learning Companion</span>
+                <li>
+                    <a href="index.html" class="hover:text-gray-900 text-link">Workshop Home</a>
                 </li>
-                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span>Supporting Student Learning</span>
+                    <a href="activity1.html" class="hover:text-gray-900 text-link">AI as a Learning Companion</a>
                 </li>
-                                  <li class="flex items-center">
-                    <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                     <span class="text-blue-600 font-medium">Designing for AI-Enhanced Learning</span>
+                    <a href="activity2.html" class="hover:text-gray-900 text-link">Supporting Student Learning</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="h-5 w-5 text-gray-400 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-blue-600 font-medium">Designing for AI-Enhanced Learning</span>
                 </li>
             </ol>
         </div>
     </nav>
-      <main class="flex-grow max-w-5xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <h1 class="text-2xl font-bold mb-4">Designing for AI-Enhanced Learning</h1>
+
+    <!-- Hero Section -->
+    <section class="hero hero-purple" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 id="hero-heading" class="text-3xl font-bold text-gray-900 mb-4">Designing for AI-Enhanced Learning</h1>
+                <p class="text-xl text-gray-800 mb-6">
+                    Create authentic assessments and provide effective guidance for students in an AI-enhanced learning environment.
+                </p>
+                <div class="flex flex-wrap gap-3" aria-label="Topic tags">
+                    <span class="tag tag-blue">Authentic Assessment</span>
+                    <span class="tag tag-green">Assignment Design</span>
+                    <span class="tag tag-purple">Student Guidance</span>
+                    <span class="tag tag-orange">Implementation Planning</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Curriculum Design Principles</h2>
+            <p class="mb-4 text-gray-800">When integrating AI into your curriculum, consider these research-based principles:</p>
             
-            <div class="bg-blue-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Curriculum Design Principles</h2>
-                <p class="mb-4">When integrating AI into your curriculum, consider these research-based principles:</p>
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Constructive Alignment</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Learning outcomes</li>
-                            <li>• Teaching activities</li>
-                            <li>• Assessment methods</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Learning outcomes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Teaching activities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Assessment methods</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Strategic Initiatives</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Equity & Accessibility</li>
-                            <li>• Inclusion & Diversity</li>
-                            <li>• Decolonization</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Equity & Accessibility</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Inclusion & Diversity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Decolonization</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600 mb-2">Continuous Improvement</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>• Regular assessment</li>
-                            <li>• Student feedback</li>
-                            <li>• Iterative refinement</li>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Regular assessment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Student feedback</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Iterative refinement</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-yellow-50 p-4 rounded mb-6">
-                <h2 class="text-lg font-semibold mb-3">Authentic Assessment Strategies</h2>
-                <p class="mb-4">Rather than trying to "AI-proof" traditional assignments, consider authentic assessments that naturally encourage original thinking and real-world application:</p>
-                
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                    <div class="bg-white p-3 rounded shadow-sm">
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Authentic Assessment Strategies</h2>
+            <p class="mb-4 text-gray-800">Rather than trying to "AI-proof" traditional assignments, consider authentic assessments that naturally encourage original thinking and real-world application:</p>
+            
+            <div class="bg-amber-50 p-5 rounded-lg border border-amber-100 mb-6">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">Case Studies</h3>
-                        <p class="text-sm mt-1">Students analyze real scenarios and propose solutions</p>
-                        <p class="text-sm text-gray-600 mt-2 italic">Example: Marketing students create campaign for local non-profit</p>
+                        <p class="mt-1">Students analyze real scenarios and propose solutions</p>
+                        <p class="text-gray-600 mt-2 italic">Example: Marketing students create campaign for local non-profit</p>
                     </div>
-                    <div class="bg-white p-3 rounded shadow-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">Portfolio Development</h3>
-                        <p class="text-sm mt-1">Document process and progress over time</p>
-                        <p class="text-sm text-gray-600 mt-2 italic">Example: Engineering students showing design iterations</p>
+                        <p class="mt-1">Document process and progress over time</p>
+                        <p class="text-gray-600 mt-2 italic">Example: Engineering students showing design iterations</p>
                     </div>
-                    <div class="bg-white p-3 rounded shadow-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">Community Projects</h3>
-                        <p class="text-sm mt-1">Engage with actual community needs</p>
-                        <p class="text-sm text-gray-600 mt-2 italic">Example: Urban planning solutions for local issues</p>
+                        <p class="mt-1">Engage with actual community needs</p>
+                        <p class="text-gray-600 mt-2 italic">Example: Urban planning solutions for local issues</p>
                     </div>
-                    <div class="bg-white p-3 rounded shadow-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
                         <h3 class="font-medium text-blue-600">Research Projects</h3>
-                        <p class="text-sm mt-1">Original research with real data</p>
-                        <p class="text-sm text-gray-600 mt-2 italic">Example: Analyzing local environmental data</p>
+                        <p class="mt-1">Original research with real data</p>
+                        <p class="text-gray-600 mt-2 italic">Example: Analyzing local environmental data</p>
                     </div>
                 </div>
 
-                <div class="bg-white p-4 rounded">
+                <div class="bg-white p-4 rounded shadow-sm">
                     <h3 class="font-medium mb-2">Key Benefits</h3>
-                    <ul class="grid grid-cols-2 gap-4 text-sm">
-                        <li>✓ Naturally resistant to AI-generated content</li>
-                        <li>✓ Develops real-world skills</li>
-                        <li>✓ Encourages critical thinking</li>
-                        <li>✓ Promotes student engagement</li>
-                        <li>✓ Supports diverse learning styles</li>
-                        <li>✓ More equitable assessment</li>
-                    </ul>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Naturally resistant to AI-generated content</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Develops real-world skills</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Encourages critical thinking</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Promotes student engagement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Supports diverse learning styles</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>More equitable assessment</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-2 gap-6 mb-6">
-                <div class="bg-gray-50 p-4 rounded">
-                    <h2 class="text-lg font-semibold mb-3">Assignment Design</h2>
-                    <p class="mb-3">Design assignments that:</p>
-                    <ul class="list-disc pl-6 space-y-2 mb-4">
-                        <li>Connect to real-world contexts</li>
-                        <li>Encourage personal reflection</li>
-                        <li>Value process as well as product</li>
-                        <li>Build transferable skills</li>
-                        <li>Allow creative approaches</li>
+        </div>
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Design Your Approach</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Assignment Design</h3>
+                    <p class="mb-4 text-gray-800">Design assignments that:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Connect to real-world contexts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Encourage personal reflection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Value process as well as product</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Build transferable skills</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Allow creative approaches</span>
+                        </li>
                     </ul>
                     <textarea id="assignment-changes" class="w-full border rounded p-2 min-h-[150px]" 
                         placeholder="Describe how you'll make your assignments more authentic..."
                         oninput="saveInput('assignment-changes')"></textarea>
                 </div>
                 
-                <div class="bg-gray-50 p-4 rounded">
-                    <h2 class="text-lg font-semibold mb-3">Student Guidance</h2>
-                    <p class="mb-3">How will you help students:</p>
-                    <ul class="list-disc pl-6 space-y-2 mb-4">
-                        <li>Understand appropriate use cases</li>
-                        <li>Develop AI literacy</li>
-                        <li>Practice critical thinking</li>
-                        <li>Access support resources</li>
-                        <li>Engage in self-assessment</li>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Student Guidance</h3>
+                    <p class="mb-4 text-gray-800">How will you help students:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Understand appropriate use cases</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Develop AI literacy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Practice critical thinking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Access support resources</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Engage in self-assessment</span>
+                        </li>
                     </ul>
                     <textarea id="student-guidance" class="w-full border rounded p-2 min-h-[150px]" 
                         placeholder="Outline your approach to guiding students..."
                         oninput="saveInput('student-guidance')"></textarea>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white border rounded-lg p-6 mb-6">
-                <h2 class="text-xl font-semibold mb-3">Implementation Planning</h2>
-                <p class="mb-4">Explore strategies for your context:</p>
-                
-                <div class="border rounded-lg mb-4">
-                    <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50">
-                        <!-- Initial message -->
-                        <div class="flex justify-start mb-4">
-                            <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
-                                I can help you develop implementation strategies that align with your learning outcomes and support student success. What aspects of your course would you like to explore?
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border-t p-4 bg-white">
-                        <div class="flex space-x-2">
-                            <input type="text" id="chat-input" 
-                                class="flex-1 p-2 border rounded-lg"
-                                placeholder="Ask about implementation strategies...">
-                            <button onclick="sendMessage()" 
-                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                Send
-                            </button>
-                        </div>
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Implementation Planning</h2>
+            <p class="mb-4 text-gray-800">Explore strategies for your context:</p>
+            
+            <div class="bg-white rounded-lg shadow-sm p-2 border border-gray-200 mb-6">
+                <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
+                <div class="border-t p-4 bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" 
+                            class="flex-1 p-2 border rounded-lg"
+                            placeholder="Ask about implementation strategies...">
+                        <button onclick="sendMessage()" 
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Send
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-gray-50 p-4 rounded mb-6">
-                <h2 class="text-xl font-semibold mb-3">Action Plan</h2>
-                <div class="space-y-4">
-                    <div>
+        <div class="content-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Action Plan</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
                         <label class="block font-medium mb-2">Immediate Actions (Next 2 Weeks)</label>
                         <textarea id="immediate-actions" class="w-full border rounded p-2 min-h-[100px]" 
                             placeholder="What specific changes will you implement right away?"
                             oninput="saveInput('immediate-actions')"></textarea>
                     </div>
-                    <div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
                         <label class="block font-medium mb-2">Long-term Strategy</label>
                         <textarea id="long-term-strategy" class="w-full border rounded p-2 min-h-[100px]" 
                             placeholder="How will you evolve your teaching approach over time?"
@@ -199,72 +381,66 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-        <!--Navigation Buttons--> 
-<div class="space-y-4">
-                <div class="flex justify-center">
-                    <button onclick="downloadPlan()" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700">
-                        Download Your Implementation Plan
-                    </button>
-                </div>
-                 <!-- Navigation -->
-        <div class="flex justify-between mt-6">
-            <a href="#" onclick="history.back()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
-                    <a href="summary.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
-                        Continue to Summary
-                    </a>
-                </div>
+        <div class="content-section mt-6">
+            <div class="flex justify-center mb-4">
+                <button onclick="downloadPlan()" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Download Your Implementation Plan
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="flex justify-between mt-6">
+                <a href="activity2.html" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Back</a>
+                <a href="summary.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">
+                    Continue to Summary
+                </a>
+            </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">© 2025 James Kruck, PhD. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Designed with a focus on accessibility and inclusive design principles.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button 
+        id="scrollToTopBtn" 
+        class="scroll-top-btn bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        aria-label="Scroll to top"
+    >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
     <!-- ChatGPT Integration -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
         // Store conversation history
         let conversationHistory = [];
 
-        // ChatGPT API configuration
-        const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
-        
+        // API endpoint (Backend on Render)
+        const BACKEND_API = 'https://leverageai.onrender.com/chat';
+
         async function callChatGPT(userMessage) {
             try {
-                conversationHistory.push({
-                    role: "user",
-                    content: userMessage
+                const response = await axios.post(BACKEND_API, {
+                    message: userMessage
                 });
 
-                const response = await axios.post(OPENAI_API_ENDPOINT, {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "You are helping faculty design teaching strategies that effectively incorporate AI as a learning tool while ensuring real skill development and maintaining academic integrity."
-                        },
-                        ...conversationHistory
-                    ],
-                    temperature: 0.7
-                }, {
-                    headers: {
-                        'Authorization': `Bearer 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`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                const aiResponse = response.data.choices[0].message.content;
-                conversationHistory.push({
-                    role: "assistant",
-                    content: aiResponse
-                });
-
-                return aiResponse;
+                console.log("✅ AI Response:", response.data); // Debugging log
+                return response.data.response;
             } catch (error) {
-                console.error('Error calling ChatGPT:', error);
-                if (error.response) {
-                    throw new Error(error.response.data.error.message || 'Error connecting to ChatGPT');
-                } else if (error.request) {
-                    throw new Error('No response from ChatGPT. Please check your internet connection.');
-                } else {
-                    throw new Error('Error setting up the request to ChatGPT.');
-                }
+                console.error('❌ Error calling AI:', error.response ? error.response.data : error);
+                return `Error: ${error.response ? error.response.data.error : "Could not connect to AI."}`;
             }
         }
 
@@ -275,9 +451,11 @@
             
             if (!messageText) return;
 
+            // Disable input while processing
             input.disabled = true;
             
             try {
+                // Add user message to UI
                 const userDiv = document.createElement('div');
                 userDiv.className = 'flex justify-end mb-4';
                 userDiv.innerHTML = `
@@ -287,8 +465,10 @@
                 `;
                 messages.appendChild(userDiv);
 
+                // Clear input
                 input.value = '';
 
+                // Show typing indicator
                 const typingDiv = document.createElement('div');
                 typingDiv.className = 'flex justify-start mb-4 typing-indicator';
                 typingDiv.innerHTML = `
@@ -299,13 +479,16 @@
                 messages.appendChild(typingDiv);
                 messages.scrollTop = messages.scrollHeight;
 
+                // Call AI
                 const response = await callChatGPT(messageText);
                 
+                // Remove typing indicator
                 const typingIndicator = messages.querySelector('.typing-indicator');
                 if (typingIndicator) {
                     messages.removeChild(typingIndicator);
                 }
 
+                // Add AI response
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'flex justify-start mb-4';
                 aiDiv.innerHTML = `
@@ -316,11 +499,13 @@
                 messages.appendChild(aiDiv);
 
             } catch (error) {
+                // Remove typing indicator
                 const typingIndicator = messages.querySelector('.typing-indicator');
                 if (typingIndicator) {
                     messages.removeChild(typingIndicator);
                 }
 
+                // Show error message
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'flex justify-center mb-4';
                 errorDiv.innerHTML = `
@@ -330,8 +515,11 @@
                 `;
                 messages.appendChild(errorDiv);
             } finally {
+                // Re-enable input
                 input.disabled = false;
                 input.focus();
+                
+                // Scroll to bottom
                 messages.scrollTop = messages.scrollHeight;
             }
         }
@@ -352,6 +540,13 @@
                 }
             });
         }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
 
         // Download implementation plan
         function downloadPlan() {
@@ -385,16 +580,48 @@ ${plan.longTermStrategy}`;
             window.URL.revokeObjectURL(url);
         }
 
-        // Handle Enter key in chat
-        document.getElementById('chat-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
             }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Initialize
         window.onload = function() {
             loadInputs();
+            
+            // Add initial AI message
+            const messages = document.getElementById('chat-messages');
+            const aiDiv = document.createElement('div');
+            aiDiv.className = 'flex justify-start mb-4';
+            aiDiv.innerHTML = `
+                <div class="bg-white border rounded-lg py-2 px-4 max-w-[80%]">
+                    I can help you develop implementation strategies that align with your learning outcomes and support student success. What aspects of your course would you like to explore?
+                </div>
+            `;
+            messages.appendChild(aiDiv);
         };
     </script>
 </body>
